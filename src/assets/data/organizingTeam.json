@@ -5,9 +5,18 @@
         "twitter":"https://twitter.com/snickdx",
         "linkedin":"https://www.linkedin.com/in/snickdx",
         "github":"https://github.com/snickdx",
-        "profileImage":"",
+        "profileImage":"https://firebasestorage.googleapis.com/v0/b/gdgpos-devfest19.appspot.com/o/nick.png?alt=media&token=c1102f1b-5e32-4588-b98e-5e85700a422c",
         "website":"https://nicholasmendez.dev"
     },
+	{
+		"name":"Maria Divina O'Brien",
+		"designation":"Chapter Organizer",
+		"twitter":"https://twitter.com/designchangett",
+		"linkedin":"https://www.linkedin.com/in/mdobrien/",
+		"github":"https://github.com/designchange",
+		"profileImage":"https://firebasestorage.googleapis.com/v0/b/gdgpos-24892.appspot.com/o/mobrien-pic%20-%20Maria%20Divina%20OBrien.jpg?alt=media&token=86f63664-4a55-454c-a514-853a36d79629",
+		"website":""
+	},
     {
         "name":"Larnelle Cooper",
         "designation":"Chapter Organizer",
@@ -36,7 +45,7 @@
         "website":""
     },
     {
-        "name":"Chantell",
+        "name":"Chantal ",
         "designation":"Chapter Organizer",
         "twitter":"",
         "linkedin":"",
