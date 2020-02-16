@@ -1,8 +1,8 @@
 {
     "ChapterName":"GDG Port-of-Spain",
-    "ChapterShortDescription":"GDG Port-of-Spain is the first GDG Chapter in Trinidad & Tobago and the english speaking Caribbean!",
+    "ChapterShortDescription":"GDG Port-of-Spain is the first GDG Chapter in Trinidad & Tobago! We are a local community of tech makers and enthusiasts.",
     "ChapterLongDec":"GDGs are local groups of software developers who are specifically interested in Google products and APIs. GDG, Port of Spain, is the official Chapter for Trinidad and Tobago. We hope to bring together Developers, professionals and tech enthusiasts in events catered around various technologies and APIs. ",
-    "ChapterMeetupLink":"https://www.meetup.com/GDG-Port-of-Spain",
+    "ChapterMeetupLink":"https://www.meetup.com/GDG-Port-of-Spain-new",
     "ChapterEmail":"gdgpos@gmail.com",
     "website":"https://gdgpos.com",
     "GDGProgramWebsite":"https://developers.google.com/programs/community/",
@@ -20,7 +20,7 @@
         },
         {
             "name" : "Meetup",
-            "link" : "https://www.meetup.com/GDG-Port-of-Spain/",
+            "link" : "https://www.meetup.com/GDG-Port-of-Spain-new/",
             "icon" : "fab fa-meetup"
         },
 		{
