@@ -20,7 +20,7 @@ The template is created by [GDG Jalandhar](https://meetup.com/GDG-Jalandhar/) te
 | Feature | Description |
 |---|---|
 | **Fast and optimized** | PWA on Lighthouse |
-| **Works offline** | Can works offline |
+| **Works offline** | Can work offline |
 | **Mobile first** | Mobo Friendly Web app can be installed as a native app on your phone |
 | **SEO optimized** | index all content and get to the top in search results |
 | **Easy in management** | keep and update all information in the JSON File |
@@ -191,8 +191,11 @@ Awesome! Contributions of all kinds are greatly appreciated. To help smoothen th
 | GDG Pune | [View Now](https://gdgpune.org/) |
 | GDG Aalborg | [View Now](https://gdgaalborg.dk/) |
 | GDG Reading | [View Now](https://www.gdgreading.dev/) |
-| GDG Reading | [View Now](https://gdgdenizli.com/) |
-
+| GDG Kolachi | [View Now](https://www.gdgkolachi.com/) |
+| GDG Denizli | [View Now](https://gdgdenizli.com/) |
+| GDG Little Rock | [View Now](https://gdglittlerock.web.app/) |
+| GDG Vilnius | [View Now](https://gdg-vilnius-aura.firebaseapp.com/) |
+| GDG Osijek | [View Now](https://www.gdg-osijek.com/) |
 
 
 Project is published under the [MIT license](/LICENSE.md).  
