@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "gdgpos-24892"
+  },
+  "targets": {
+    "gdgpos-24892": {
+      "hosting": {
+        "app": [
+          "gdgpos-24892"
+        ]
+      }
+    }
   }
 }
