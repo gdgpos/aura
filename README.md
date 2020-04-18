@@ -1,59 +1,102 @@
-# Aura - GDG[x]
+# Aura v3
+
+<img src="https://github.com/GDG-Jalandhar/WebsiteData/blob/master/Aura%20Main%20v3%20Dark%20.png?raw=true" width="420em"><img src="https://github.com/GDG-Jalandhar/WebsiteData/blob/master/Aura%20Main%20v3%20Light.png?raw=true" width="420em">
+
 [![MadeWithVueJs.com shield](https://madewithvuejs.com/storage/repo-shields/1444-shield.svg)](https://madewithvuejs.com/p/aura/shield-link)
-[![Build Status](https://travis-ci.org/gdg-x/aura.svg?branch=master)](https://travis-ci.org/gdg-x/aura)
 
-<img width="100%" src="https://raw.githubusercontent.com/GDG-Jalandhar/WebsiteData/master/promotion%20images/Aura%20v1.0.3.png">
 
-Standard Web App for GDG's Communties. <br>
-[Demo](https://aura-client-master.firebaseapp.com/) <br>
-Version: 1.0.6
+Standard Web App for Tech Communties. <br>
+[Demo](https://myaurapp.web.app/) <br>
+Version: 3.1.1
 
 ### Show some :heart: and star the repo to support the project
+### If you are using Aura, Kindly [fill this form](https://forms.gle/SNpajdAnqbSac2AV9) for Aura Web App Directory
 
 ## Overview
 
-Aura is the website template that helps you to set GDG's Communities website with events, team and  management in a few minutes.
-
-The template is created by [GDG Jalandhar](https://meetup.com/GDG-Jalandhar/) team experience of running meetups/events.
+Aura is the Web App that helps you to mange the Tech Communities like GDGs, DSCs or any other tech communities with Aura Admin.
 
 ## Features
 | Feature | Description |
 |---|---|
 | **Fast and optimized** | PWA on Lighthouse |
 | **Works offline** | Can work offline |
+| **Dark/Light Theme Mode** | Light/Dark Theme Mode |
 | **Mobile first** | Mobo Friendly Web app can be installed as a native app on your phone |
 | **SEO optimized** | index all content and get to the top in search results |
-| **Easy in management** | keep and update all information in the JSON File |
+| **Easy in management** | Easy in Management by using Aura Admin |
+| **Trigger Push Notification** | Trigger Push Notification to Aura Main |
+| **Usability** | Any Tech Communities can use |
+| **Custom Event Page** | Now No need to create the website for XYZ event |
+| **Public shareable URL for Team & Speakers** | Team member public URL for Self Branding and Public Speaker Directory & Public URL for Promotion |
 
+
+The template is created by [GDG Jalandhar](https://meetup.com/GDG-Jalandhar/) team experience of running meetups/events.
 
 ## Getting Started
-1. [Fork repository](https://github.com/Vrijraj/aura/fork) and clone it locally
+
+1. [Fork this repository](https://github.com/gdg-x/aura/fork) & [Aura Admin](https://github.com/gdg-x/aura-admin/fork) (Important) and clone both repo locally
+1 To Setup `Aura Main` follow this and to setup [Aura Admin](https://github.com/gdg-x/aura-admin)
+1. Use same [Firebase account](https://console.firebase.google.com) project for both `Admin` & `Aura Main`
+1. Setup Environment
+    - Install [Node.js (v8.9.4 or above)](https://nodejs.org/en/download/)
+    - Install vue cli: `npm install -g @vue/cli`
 1. Install project dependencies: `npm install` 
-1. Replace the `urlname` Field (`CHAPTER_URL_NAME`)  [here](/src/config/key.js)
-1. Compiles and hot-reloads for development: `npm run serve`
-1. Update `Meta Tag`, `Title Tag` and [Google Analytics Code](https://analytics.google.com/analytics/web/#/) from [Basic Info](/public/index.html), [manifest.json](/public/manifest.json) and [Resources](/src/assets/data)
-1. For the production: `npm run build` and then one dir will be created `dist`
-1. For testing: `npm run test`
-
-## Deploy on Firebase
-
-1. Setup Environment for the Firebase deployment
-   * Install Firebase CLI: `npm i -g firebase-tools`
-1. Create [Firebase account](https://console.firebase.google.com) and login into [Firebase CLI](https://firebase.google.com/docs/cli/): `firebase login`
-1. Open Terminal/CMD/Powershell in your dir.
-1. Now type `firebase login` command in your Terminal/CMD/Powershell.
-1. Type `firebase init`.
-1. Select the project by using the arrow keys.
-1. Then Select the `Firebase Hosting` by using Spacebar and arrow key.
-1. Click `No` for Single page web app.
-1. Type `dist`.
-1. Some by default file will be created successfully.
+1. Create [Firebase account](https://console.firebase.google.com) and Create a new Project if you have not any (Kindly use same project for both repo ([Aura Admin](https://github.com/gdg-x/aura-admin) & [Aura Main](https://github.com/gdg-x/aura)))
+1. Go to Firebase Project Dashboard
+1. Go to Cloud Firestore Database and Enable the database in test mode
+1. Update the Rule
+    ```js
+        rules_version = '2';
+        service cloud.firestore {
+            match /databases/{database}/documents {
+                match /{document=**} {
+                allow read : if true;
+                allow write : if request.auth.uid != null;
+                }
+            }
+        }
+    ```
+1. In the Firebase project console dashboard. Click on create new web app
+1. Go to Firebase project Settings and then General Settings Tab
+1. Scroll down and go to your app section under Firebase SDK snippet
+1. Now click on the config
+1. Copy the code which looks similar to the below sample
+    ```js
+    apiKey: "Axxxxxxxxxxxxxxxxxxx",
+    authDomain: "xxxxxx.firebaseapp.com",
+    databaseURL: "https://xxxxxxxx.firebaseio.com",
+    projectId: "xxxxxxxxx",
+    storageBucket: "xxxxxxx.appspot.com",
+    messagingSenderId: "xxxxxxxxxxx",
+    appId: "1:xxxxxxxxx:web:xxxxxxx"
+    ```
+1. Now goto project code and inside [src/config/](https://github.com/gdg-x/aura/blob/master/src/config/firebase.js) update the `firebase.js` file with these codes
+1. Update the field name in [vue.config](https://github.com/gdg-x/aura/blob/master/vue.config.js)
 1. Run locally
-   * `firebase serve` or `npm run serve`
-1. Update Firebase.json file
+    - `npm run serve`
+    - For the First Time you will see a text Either `Your Internet is not Working or Site is not Configured`
+1. For the production: `npm run build` and then one dir will be created dist
+1. For testing: `npm run test`
+1. Setup [Aura Admin](https://github.com/gdg-x/aura-admin/fork) for Management of Aura v3
+
+## Deployment on Firebase
+1. Install required tools for performing Firebase deployment
+    - Install Firebase CLI: `npm i -g firebase-tools`
+1. Login into Firebase CLI using the following command -  `firebase login`
+1. Open Terminal/CMD/Powershell in the root directory of your clone of aura-admin repository.
+1. Now type `firebase login` command in your Terminal/CMD/Powershell
+1. Update the `Firebase Project ID` in `.firebasesrc` file. This value should match the project ID in your Project Settings of the Firebase project you created in the previous section.
+1. Go to the Firebase Console Dashboard and Click on Hosting in the left navigation.
+1. Click on Get Started
+1. Click through all steps till you’re taken to the Hosting page in the console.
+1. You’ll be provided with a ready domain with your project ID. It should look like - `<project-id>.web.app or <project-id>.firebaseapp.com`
+1. Copy the sub-domain name of the URL provided. In this case, it will be the project ID. However, to be precise, you have to copy the part before .web.aap or .firebaseapp.com. This is your Site ID
+1. Update `Firebase.json` file, set the site key to Site ID
     ```js
         {
             "hosting": {
+                "site":"Your_Firebase_Hosting_id",
                 "public": "dist",
                 "rewrites": [ {
                     "source": "**",
@@ -67,41 +110,15 @@ The template is created by [GDG Jalandhar](https://meetup.com/GDG-Jalandhar/) te
             }
         }
     ```
-1. Build and deploy
-   * `firebase deploy` or `npm run deploy`
-
-## Deploy on Netlify
-1. On Netlify, setup up a new project from GitHub with the following settings:
-
-    - **Build Command:** `npm run build` or `yarn build`
-    - **Publish directory:** `dist`
-
-2. Hit the deploy button!
-
-Also checkout [vue-cli-plugin-netlify-lambda](https://github.com/netlify/vue-cli-plugin-netlify-lambda).
-
-In order to receive direct hits using `history mode` on Vue Router, you need to create a file called `_redirects` under `/public` with the following content:
-
-```
-# Netlify settings for single-page application
-/*    /index.html   200
-```
-
-More information on [Netlify redirects documentation](https://www.netlify.com/docs/redirects/#history-pushstate-and-single-page-apps).
-
-### Run your tests
-1. For Test: `npm run test`
+1. In your terminal at the root directory of the project,  build and deploy using the following command     
+    - `firebase deploy`
 
 
-### Lints and fixes files
-1. For Lints and Fixes files: `npm run lint`
+
 
 ### Documentation
-1. The [Getting Started guide](#getting-started) is probably a good first point of call! <br>
-1. [Full documentation](/docs).
+1. [Full documentation](https://docs.google.com/document/d/18jKhG10OZx1T87ey8rtLYjyPpjPTCqPfX3JiOs3PUcs/edit?usp=sharing).
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Technology Stack
 
@@ -110,6 +127,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 * [Firebase](https://firebase.google.com/)
 * [Service Worker & PWA](https://www.npmjs.com/package/vue-pwa)
 * [Workbox](https://developers.google.com/web/tools/workbox)
+
+
 
 ## Contributing
 
@@ -121,82 +140,27 @@ Awesome! Contributions of all kinds are greatly appreciated. To help smoothen th
 - Use the search feature to check for an existing issue
 - Include as much information as possible and provide any relevant resources (Eg. screenshots)
 - For bug reports ensure you have a reproducible test case
-  - A pull request with a breaking test would be super preferable here but isn't required
+ - A pull request with a breaking test would be super preferable here but isn't required
 
 ### Submitting a Pull Request
 
 - Squash commits
 - Lint your code with eslint (config provided)
 - Include relevant test updates/additions
+- Pull requests _must_ be made against `develop` branch. Any other branch (unless specified by the maintainers) will get rejected.
 
 ## Contributors
-<b>Maintainer:</b> [Vrijraj Singh](https://github.com/vrijraj)
+<b>Maintainer:</b> [Vrijraj Singh](https://github.com/vrijraj) <br>
+<b>Developers:</b> [Vrijraj Singh](https://github.com/vrijraj) &  [Bharat Agarwal](https://github.com/bharatagsrwal) 
 
 ### View Website Built with Projects
 
 | Community Name | Web App Link |
 | --- | --- |
 | GDG Jalandhar | [View Now](https://gdgjalandhar.com) |
-| GDG Kuala Lumpur | [View Now](https://www.gdgkl.dev/) |
-| GDG Fortaleza | [View Now](http://gdgfortaleza.com.br/) |
-| GDG Kozhikode | [View Now](https://gdgkozhikode.org/) |
-| GDG Delta | [View Now](https://gdgdelta.com/) |
-| GDG Tokyo | [View Now](https://tokyo.gdgjapan.org/) |
-| GDG Yangon | [View Now](https://gdgyangon.org/) |
-| GDG Gran Canaria | [View Now](https://gdggrancanaria.org/) |
-| GDG Santander | [View Now](https://gdgsantander.com/) |
-| GDG Ciudad del Este | [View Now](http://gdgcde.org/) |
-| GDG Ilorin | [View Now](https://gdg-ilorin-d9f0d.firebaseapp.com/) |
-| GDG Chetumal | [View Now](https://gdg-chetumal.firebaseapp.com/) |
-| GDG Porto | [View Now](https://gdgporto-aura.firebaseapp.com/) |
-| GDG Istanbul | [View Now](https://gdgist.firebaseapp.com/) |
-| GDG Port-of-Spain | [View Now](https://gdgpos.com/) |
-| GDG Jeddah | [View Now](https://www.gdgjed.com/home) |
-| GDG Sevilla | [View Now](https://www.gdgsevilla.com/) |
-| GDG Madeira | [View Now](https://gdgmadeira.xyz/) |
-| GDG Chandigarh | [View Now](https://gdg-chd.web.app/) |
-| GDG Rochester | [View Now](https://gdgrochester.com/) |
-| GDG Sri Lanka | [View Now](https://gdgsrilanka.org) |
-| GDG Lafia | [View Now](https://lafia.gdg.ng/) |
-| GDG Kinshasa | [View Now](https://gdg-kin.firebaseapp.com/) |
-| Dev Cluster Goa | [View Now](https://beta.devcluster.community/) |
-| GDG Cloud Calgary | [View Now](https://gdgyyc.com/) |
-| GDG Cloud SF | [View Now](https://cloudsf.withgdg.com/) |
-| GDG Nagpur | [View Now](https://gdgnagpur.com/) |
-| GDG Kolkata | [View Now](https://gdgkolkata.org/) |
-| GDG Ahmedabad | [View Now](http://gdgahmedabad.com/) |
-| GDG Fremont | [View Now](https://gdg-fremont.firebaseapp.com/) |
-| GDG Savannah | [View Now](https://gdgsavannah.com/) |
-| GDG San Salvador | [View Now](https://gdgsansalvador.dev/) |
-| GDG Indore | [View Now](https://gdgindore.in/) |
-| GDG Pescara | [View Now](https://gdgpescara.it/en/) |
-| GDG CDE | [View Now](http://gdgcde.org/) |
-| GDG Galicia | [View Now](https://gdggalicia.com/) |
-| GDG Campobasso| [View Now](https://gdgcampobasso.it/) |
-| GDG Galway | [View Now](https://gdg-galway.com/) |
-| GDG Nizhny Novgorod | [View Now](https://gdgnnsite-62ac7.firebaseapp.com/) |
-| GDG Madurai | [View Now](https://www.gdgmadurai.in/) |
-| GDG Bristol | [View Now](https://gdgbristol.org/) | 
-| GDG Ranchi | [View Now](https://www.gdgranchi.in/) |
-| GDG Chennai | [View Now](https://gdgchennai.in)|
-| GDG Kano | [View Now](http://kano.gdg.ng/)|
-| GDG Gandhinagar |[View Now](https://gdggandhinagar.org/) |
-| GDG Craiova | [View Now](https://gdgcraiova.dev/) |
-| GDG Houston | [View Now](https://gdghoustontx.org/) |
-| GDG Cloud Ahmedabad | [View Now](https://gdgahmedabad.cloud/) |
-| GDG Cloud Hanoi | [View Now](https://gdgcloudhanoi.com/) |
-| GDG Ulaanbaatar | [View Now](https://gdgub.org/) |
-| GDG Ado-Ekiti | [View Now](https://gdgadoekiti.com) |
-| GDG Gwalior | [View Now](https://gdggwalior.in/) |
-| GDG Pune | [View Now](https://gdgpune.org/) |
-| GDG Aalborg | [View Now](https://gdgaalborg.dk/) |
-| GDG Reading | [View Now](https://www.gdgreading.dev/) |
-| GDG Kolachi | [View Now](https://www.gdgkolachi.com/) |
-| GDG Denizli | [View Now](https://gdgdenizli.com/) |
-| GDG Little Rock | [View Now](https://gdglittlerock.web.app/) |
-| GDG Vilnius | [View Now](https://gdg-vilnius-aura.firebaseapp.com/) |
-| GDG Osijek | [View Now](https://www.gdg-osijek.com/) |
+| DSC NSEC | [View Now](https://dscnsec.com) |
+| GDG Konya | [View Now](https://gdgkonya.com) |
 
 
-Project is published under the [MIT license](/LICENSE.md).  
-Feel free to clone and modify repo as you want, but don't forget to add reference to authors :)
+## Facing Any Problem or need any Help?
+Write us in [issues](https://github.com/gdg-x/aura/issues) section. Our team will try solve your issue within 10-12 hours.<br>

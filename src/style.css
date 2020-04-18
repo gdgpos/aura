@@ -1,47 +1,42 @@
-@import "https://use.fontawesome.com/releases/v5.7.0/css/all.css";
-
+  
 @font-face {
     font-family: google-sans;
-    src: url(assets/fonts/GoogleSans-Regular.ttf);
+    src: url(assets/fonts/google-font.woff2);
 }
 .google-font{
     font-family: google-sans
 };
-
-.tooltip {
-  position: relative;
-  display: inline-block;
+html{
+    overflow-x: hidden;
+}
+body{
+    font-family: google-sans
 }
 
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 140px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 150%;
-  left: 50%;
-  margin-left: -75px;
-  opacity: 0;
-  transition: opacity 0.3s;
+.card-light{
+    background: white;
+    border:1px solid #e0e0e0 !important; 
+    border-radius:5px
 }
 
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
+.card-dark{
+    background-color:#292929;
+    border:1px solid #212121;
+    border-radius:5px
 }
+.darkModeCard{
+    background-color:#292929;
+    border:1px solid #212121;
+    border-radius:5px
+}
+.whiteTheme{
+    background: white;
+    border:1px solid #e0e0e0;
+    border-radius:5px
+  }
 
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
+/* .lightModeCard{
+    background-color:#ffff;
+    border:1px solid #e0e0e0;
+    border-radius:5px
+} */
